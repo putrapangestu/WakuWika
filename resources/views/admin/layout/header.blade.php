@@ -13,7 +13,7 @@
                             <!--begin::Left-->
                             <div class="d-none d-lg-flex align-items-center mr-3">
                                 <!--begin::Logo-->
-                                <a href="index.html" class="mr-20">
+                                <a href="{{ url("admin") }}" class="mr-20">
                                     <img alt="Logo" src="images/logo-gt.png" class="max-h-35px" />
                                 </a>
                                 <!--end::Logo-->
@@ -189,10 +189,11 @@
                                     <!--begin::Header Nav-->
                                     <ul class="menu-nav ">
                                         <li class="menu-item  menu-item-submenu menu-item-rel" data-menu-toggle="hover"
-                                            aria-haspopup="true"><a href="javascript:;"
-                                                class="menu-link menu-toggle"><span
+                                            aria-haspopup="true">
+                                            <a href="{{ url("admin") }}" class="menu-link"><span
                                                     class="menu-text">Dashboard</span><span class="menu-desc">Recent
-                                                    Updates & Reports</span><i class="menu-arrow"></i></a>
+                                                    Updates & Reports</span><i class="menu-arrow"></i>
+                                            </a>
                                         </li>
                                         <li class="menu-item  menu-item-submenu menu-item-rel" data-menu-toggle="hover"
                                             aria-haspopup="true">

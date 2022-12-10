@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\{KategoriController,MinumanController};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +22,10 @@ Route::get('/pesan', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 });
-Route::get('/kategori', function () {
-    return view('admin.pesanan.kategori');
-});
-Route::get('/tambah', function () {
-    return view('admin.pesanan.tambah');
-});
+Route::get('/kategori', [KategoriController::class, "halaman"])->name("Admin.Kategori");
+Route::post('/post-kategori', [KategoriController::class, "tambah"])->name("Admin.Post.Kategori");
+Route::get('/tambah', [MinumanController::class, "halaman"])->name("Admin.Minuman");
+Route::post('/post-minuman', [MinumanController::class, "tambah"])->name("Admin.Post.Minuman");
 Route::get('/pesanan', function () {
     return view('admin.pesanan.index');
 });
