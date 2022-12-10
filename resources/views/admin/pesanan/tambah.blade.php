@@ -47,7 +47,7 @@
                                     <div class="form-group mb-1">
                                         <label>Nama Minuman</label>
                                         <input type="text" class="form-control" name="nama" id="judul" placeholder="Nama Minuman.."/>
-                                        @error('judul')
+                                        @error('nama')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -59,7 +59,7 @@
                                             <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
                                             @endforeach
                                         </select>
-                                        @error('lokasi')
+                                        @error('id_kategori')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -73,7 +73,7 @@
                                     <div class="form-group mb-1">
                                         <label for="harga awal">Harga</label>
                                         <input type="number" class="form-control" name="harga" id="harga_awal" placeholder="Rp."/>
-                                            @error('harga_awal')
+                                            @error('harga')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                     </div>
