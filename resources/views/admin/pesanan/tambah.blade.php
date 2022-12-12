@@ -66,8 +66,8 @@
                                     <div class="form-group mb-1">
                                         <label for="exampleSelect1">Minuman hot/ice</label>
                                         <select class="form-control" name="pilihan" id="exampleSelect1" onchange="showresult(this.value)">
-                                            <option value="1" id="hari1">hot</option>
-                                            <option value="2" id="hari2">ice</option>
+                                            <option value="hot" id="hari1">hot</option>
+                                            <option value="ice" id="hari2">ice</option>
                                         </select>
                                     </div>
                                     <div class="form-group mb-1">

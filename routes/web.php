@@ -13,9 +13,9 @@ use App\Http\Controllers\Admin\{KategoriController,MinumanController};
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 Route::get('/pesan', function () {
     return view('pesan');
 });
@@ -25,6 +25,7 @@ Route::get('/admin', function () {
 Route::get('/kategori', [KategoriController::class, "halaman"])->name("Admin.Kategori");
 Route::post('/post-kategori', [KategoriController::class, "tambah"])->name("Admin.Post.Kategori");
 Route::get('/tambah', [MinumanController::class, "halaman"])->name("Admin.Minuman");
+Route::get('/', [MinumanController::class, "item"])->name("Minuman");
 Route::post('/post-minuman', [MinumanController::class, "tambah"])->name("Admin.Post.Minuman");
 Route::get('/pesanan', function () {
     return view('admin.pesanan.index');

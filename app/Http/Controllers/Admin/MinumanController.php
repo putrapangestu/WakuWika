@@ -24,6 +24,12 @@ class MinumanController extends Controller
         return view("admin.pesanan.tambah",compact('kategoris'));
     }
 
+    public function item(){
+        $minumans = Minuman::all();
+
+        return view('index')->with(compact('minumans'));
+    }
+
     public function tambah(MinumanRequest $request)
     {
         $this->minumanService->Tambah($request);
