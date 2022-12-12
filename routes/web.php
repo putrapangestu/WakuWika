@@ -13,23 +13,26 @@ use App\Http\Controllers\Admin\{KategoriController,MinumanController};
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
 Route::get('/pesan', function () {
     return view('pesan');
 });
-Route::get('/admin', function () {
-    return view('admin.index');
-});
+//image
+Route::get('image/{filename}', 'HomeController@displayImage')->name('image.displayImage');
+
 Route::get('/kategori', [KategoriController::class, "halaman"])->name("Admin.Kategori");
 Route::post('/post-kategori', [KategoriController::class, "tambah"])->name("Admin.Post.Kategori");
 Route::get('/tambah', [MinumanController::class, "halaman"])->name("Admin.Minuman");
 Route::get('/', [MinumanController::class, "item"])->name("Minuman");
+Route::get('/admin', [MinumanController::class, "item2"])->name("Admin");
 Route::post('/post-minuman', [MinumanController::class, "tambah"])->name("Admin.Post.Minuman");
 Route::get('/pesanan', function () {
     return view('admin.pesanan.index');
 });
 Route::get('/login', function () {
     return view('login');
+});
+//edit
+Route::get('admin/minuman/edit', [MinumanController::class, "halaman2"])->name("Admin.Minuman.Edit");
+Route::get('/admin/kategori/edit', function () {
+    return view('admin.pesanan.kategoriEdit');
 });

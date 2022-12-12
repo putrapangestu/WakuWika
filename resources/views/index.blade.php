@@ -32,7 +32,7 @@
             @foreach($minumans as $minuman)
             <div class="col-lg-6" style="height: 150px;">
                 <div class="as-product list-view">
-                    <div class="product-img"><img src="{{ url('storage/'.$minuman->gambar) }}" alt="Product Image" style="height: 100%; object-fit: cover;border-radius: 8px;"></div>
+                    <div class="product-img"><img src="{{ asset('storage/'.$minuman->gambar) }}" alt="Product Image" style="height: 100%; object-fit: cover;border-radius: 8px;"></div>
                     <div class="product-content">
                         <h3 class="product-title" style="margin-bottom: 0;"><a href="shop-details.html" style="font-size: 16px;color: black;font-weight: 700;">{{ $minuman->nama }}</a></h3>
                         <p class="product-text">Lightly smoked and minced pork tenderloin topped with our chilli hot

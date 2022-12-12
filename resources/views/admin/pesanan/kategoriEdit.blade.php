@@ -15,7 +15,7 @@
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                     <!--begin::Page Title-->
                     <h2 class="text-dark font-weight-bold my-1 mr-5">
-                        Tambah Kategori </h2>
+                        Edit Kategori </h2>
                     <!--end::Page Title-->
 
                 </div>
@@ -38,7 +38,7 @@
                         <div class="card card-custom gutter-b example example-compact">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    Tambah Kategori Minuman
+                                    Edit Kategori Minuman
                                 </h3>
                             </div>
                             @if ($errors->has("nama"))

@@ -23,6 +23,11 @@ class MinumanController extends Controller
         $kategoris = $this->kategoriService->fetchKategori();
         return view("admin.pesanan.tambah",compact('kategoris'));
     }
+    public function halaman2()
+    {
+        $kategoris = $this->kategoriService->fetchKategori();
+        return view("admin.pesanan.minumanEdit",compact('kategoris'));
+    }
 
     public function item(){
         $minumans = Minuman::all();
@@ -35,5 +40,10 @@ class MinumanController extends Controller
         $this->minumanService->Tambah($request);
         // return redirect()->back();
         return redirect("admin");
+    }
+    public function item2(){
+        $minumans = Minuman::all();
+
+        return view('admin.index')->with(compact('minumans'));
     }
 }

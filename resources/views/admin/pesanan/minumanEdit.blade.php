@@ -1,0 +1,112 @@
+@extends('admin.layout.main')
+
+@section('title','dashboard')
+
+@section('content')
+<div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Subheader-->
+    <div class="subheader py-2 py-lg-6  subheader-transparent " id="kt_subheader">
+        <div
+            class=" container  d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-1">
+
+                <!--begin::Page Heading-->
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                    <!--begin::Page Title-->
+                    <h2 class="text-dark font-weight-bold my-1 mr-5">
+                        Edit Minuman </h2>
+                    <!--end::Page Title-->
+
+                </div>
+                <!--end::Page Heading-->
+            </div>
+            <!--end::Info-->
+        </div>
+    </div>
+    <!--end::Subheader-->
+
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class=" container ">
+
+            <form action="{{ route('Admin.Post.Minuman') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
+                    <div class="col-md-9" style="margin-inline: auto">
+                        <!--begin::Card-->
+                        <div class="card card-custom gutter-b example example-compact">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    Edit Minuman
+                                </h3>
+                            </div>
+                            <!--begin::Form-->
+                                <div class="card-body">
+                                    <div class="form-group mb-1">
+                                        <label>Nama Minuman</label>
+                                        <input type="text" class="form-control" name="nama" id="judul" placeholder="Nama Minuman.."/>
+                                        @error('nama')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mb-1">
+                                        <label>Kategori Minuman</label>
+                                        <select class="form-control" name="id_kategori">
+                                            <option value=""></option>
+                                            @foreach($kategoris as $kategori)
+                                            <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('id_kategori')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mb-1">
+                                        <label for="exampleSelect1">Minuman hot/ice</label>
+                                        <select class="form-control" name="pilihan" id="exampleSelect1" onchange="showresult(this.value)">
+                                            <option value="hot" id="hari1">hot</option>
+                                            <option value="ice" id="hari2">ice</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-1">
+                                        <label for="harga awal">Harga</label>
+                                        <input type="number" class="form-control" name="harga" id="harga_awal" placeholder="Rp."/>
+                                            @error('harga')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group mb-1">
+                                        <label for="image">Foto Minuman</label>
+                                        <input class="form-control" id="image" type="file" name="gambar" accept="image/*">
+                                        @error('gambar')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>                              
+                                </div>
+                            <!--end::Form-->
+                        </div>
+                        <!--end::Card-->
+                    </div>
+                </div>
+                <div class="card-footer col-md-9" style="margin-inline: auto">
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Entry-->
+
+</div>
+
+
+ 
+<!--end::Content-->
+@endsection
+
+@push('script')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@endpush
