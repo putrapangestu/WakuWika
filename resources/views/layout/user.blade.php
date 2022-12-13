@@ -121,7 +121,7 @@
                     <div class="col-xl-9">
                         <div class="subscribe-box">
                             <div>
-                                <h2 class="subscribe-box_title">Subscription News</h2>
+                                <h2 class="subscribe-box_title">Selamat Menikmati</h2>
                                 <p class="subscribe-box_text">Subscribe to the weekly newsletter for latest updates.</p>
                             </div>
                             
@@ -135,7 +135,7 @@
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-lg-6">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2022 <a href="https://themeforest.net/user/angfuz_soft">Angfuzsoft</a>. All Rights Reserved.</p>
+                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2022 <a href="https://themeforest.net/user/angfuz_soft">Kanesa</a>. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6 text-end d-none d-lg-block">
                         <div class="footer-links">

@@ -47,6 +47,7 @@
                                     <th>Gambar</th>
                                     <th>Nama</th>
                                     <th>Kategori</th>
+                                    <th>Jenis</th>
                                     <th>Harga</th>
                                     <th>Keterangan</th>
                                 </tr>
@@ -59,6 +60,7 @@
                                     <td><img src="{{ asset('storage/'.$minuman->gambar) }}" alt="" width="80px" height="80px"></td>
                                     <td>{{ $minuman->nama }}</td>
                                     <td>{{ $minuman->kategori->nama }}</td>
+                                    <td>{{ $minuman->pilihan }}</td>
                                     <td>{{ $minuman->harga }}</td>
                                     <td>                                
                                         <a class="edit" href="{{ url('admin/minuman/edit/'.$minuman->id) }}">Edit </a> |
