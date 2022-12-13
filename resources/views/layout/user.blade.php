@@ -70,10 +70,10 @@
     <header class="as-header header-layout1">   
         <div class="menu-area">
             <div class="container as-container">
-                <div class="row align-items-center justify-content-between">
+                <div class="row align-items-center justify-content-between"style="background: #D32529;">
                     <div class="col-xl-auto" style="background: #D32529;">
                         <div class="d-flex align-items-center justify-content-between">
-                            <div class="logo-style1" style="margin-left: 4%;padding: 20px 0;background: #D32529;"><a href="index.html"><img src="http://127.0.0.1:8000/assets/img/logo1.png" alt="Pizzer" style="height: 20px;"></a></div>
+                            <div class="logo-style1" style="padding: 20px 0;background: #D32529;"><a href="index.html"><img src="http://127.0.0.1:8000/assets/img/logo1.png" alt="Pizzer" style="height: 20px;"></a></div>
                             <nav class="main-menu d-none d-lg-inline-block">
                                 <ul>
                                     <li class="menu-item-has-children"><a href="index.html">Home</a>

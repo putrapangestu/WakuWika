@@ -10,12 +10,21 @@
     .as-product.list-view .product-content {
         background: #fff;
     }
+    .breadcumb-wrapper {
+    background-color: transparent;
+    }
+    .divider-title span{
+        color: #D32529;
+        font-weight: 800;
+        font-size: 20px;
+    }
 </style>
     
-<div class="breadcumb-wrapper background-image" style="background-image: url(&quot;assets/img/breadcumb/breadcumb-bg.jpg&quot;);">
+<div class="breadcumb-wrapper background-image" style="background-image: url({{ asset('assets/img/hero.png') }}); height:34vh;">
     <div class="container z-index-common">
         <div class="breadcumb-content">
-            <h1 class="breadcumb-title">WELCOME TO RESTAURANT FOOD <span class="font-style text-theme2">WakuWika</span></h1>
+            {{-- <img src="{{ asset('assets/img/hero.png') }}" alt=""> --}}
+            {{-- <h1 class="breadcumb-title">WELCOME TO RESTAURANT FOOD <span class="font-style text-theme2">WakuWika</span></h1> --}}
             
         </div>
     </div>
