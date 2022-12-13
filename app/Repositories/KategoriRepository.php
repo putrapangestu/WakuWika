@@ -18,9 +18,9 @@ class KategoriRepository
         return $this->model->all();
     }
 
-    public function getKategori(mixed $column, mixed $data): mixed
+    public function getKategori($id): object
     {
-        return $this->model->where($column,$data)->firstOrFail();
+        return $this->model->findOrFail($id);
     }
 
     public function whereKategori(mixed $column, mixed $data): mixed
@@ -35,6 +35,16 @@ class KategoriRepository
             ->take($limit)
             ->latest()
             ->get();
+    }
+
+    public function updateData(string $id, array $data)
+    {
+        return $this->getKategori($id)->update($data);
+    }
+
+    public function hapusData(string $id)
+    {
+        return $this->getKategori($id)->delete($id);
     }
 
     public function getDiskName(): string

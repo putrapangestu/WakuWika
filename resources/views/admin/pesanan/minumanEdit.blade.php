@@ -31,7 +31,7 @@
         <!--begin::Container-->
         <div class=" container ">
 
-            <form action="{{ route('Admin.Post.Minuman') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route("Admin.Minuman.Edit.Post",["id"=>$minuman->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-9" style="margin-inline: auto">
@@ -46,7 +46,7 @@
                                 <div class="card-body">
                                     <div class="form-group mb-1">
                                         <label>Nama Minuman</label>
-                                        <input type="text" class="form-control" name="nama" id="judul" placeholder="Nama Minuman.."/>
+                                        <input type="text" class="form-control" name="nama" id="judul" value="{{ $minuman->nama }}" placeholder="Nama Minuman.."/>
                                         @error('nama')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -56,7 +56,7 @@
                                         <select class="form-control" name="id_kategori">
                                             <option value=""></option>
                                             @foreach($kategoris as $kategori)
-                                            <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
+                                            <option value="{{ $kategori->id }}" @if($minuman->id_kategori == $kategori->id) selected @endif>{{ $kategori->nama }}</option>
                                             @endforeach
                                         </select>
                                         @error('id_kategori')
@@ -66,13 +66,13 @@
                                     <div class="form-group mb-1">
                                         <label for="exampleSelect1">Minuman hot/ice</label>
                                         <select class="form-control" name="pilihan" id="exampleSelect1" onchange="showresult(this.value)">
-                                            <option value="hot" id="hari1">hot</option>
-                                            <option value="ice" id="hari2">ice</option>
+                                            <option value="hot" id="hari1" @if($minuman->pilihan == "hot") selected @endif>hot</option>
+                                            <option value="ice" id="hari2" @if($minuman->pilihan == "ice") selected @endif>ice</option>
                                         </select>
                                     </div>
                                     <div class="form-group mb-1">
                                         <label for="harga awal">Harga</label>
-                                        <input type="number" class="form-control" name="harga" id="harga_awal" placeholder="Rp."/>
+                                        <input type="number" class="form-control" name="harga" id="harga_awal" value="{{ $minuman->harga }}" placeholder="Rp."/>
                                             @error('harga')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -80,6 +80,7 @@
                                     <div class="form-group mb-1">
                                         <label for="image">Foto Minuman</label>
                                         <input class="form-control" id="image" type="file" name="gambar" accept="image/*">
+                                        <img src="{{ asset('storage/'.$minuman->gambar) }}" alt="" width="100px" height="100px">
                                         @error('gambar')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror

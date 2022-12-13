@@ -52,7 +52,7 @@
 					<h3>SIGNIN </h3>
 					<div class="text-muted font-weight-bold">Please insert email and password:</div>
 				</div>
-				<form action="#" method="post" data-type="json" class="form" id="kt_login_signin_form">
+				<form action="{{ route("Admin.login") }}" method="post" class="form" id="kt_login_signin_form">
 					@csrf
 					<div class="form-group mb-5">
 						<input class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="Email" name="email" id="email" value="{{ old('email') }}" autocomplete="off" required/>
@@ -88,7 +88,7 @@
 						</div>
 						<a href="javascript:;" id="kt_login_forgot" class="text-muted text-hover-primary">Forget password ?</a>
 					</div>
-					<button id="kt_login_signin_submit" class="btn font-weight-bold btn-primary py-4 my-3 mx-0" style="padding-right: 45%; padding-left:43%; background:#ff6d05; ">SIGNIN</button>
+					<button type="submit" class="btn font-weight-bold btn-primary py-4 my-3 mx-0" style="padding-right: 45%; padding-left:43%; background:#ff6d05; ">SIGNIN</button>
 				</form>
 				<div class="mt-10">
 					<span class="opacity-70 mr-4">

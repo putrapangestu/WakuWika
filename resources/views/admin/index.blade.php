@@ -56,13 +56,13 @@
                                 @foreach($minumans as $minuman)
                                 <tr>
                                     <td>{{ $i++ }}</td>
-                                    <td><img src="" alt=""></td>
+                                    <td><img src="{{ asset('storage/'.$minuman->gambar) }}" alt="" width="80px" height="80px"></td>
                                     <td>{{ $minuman->nama }}</td>
-                                    <td>{{ $minuman->id_kategori }}</td>
+                                    <td>{{ $minuman->kategori->nama }}</td>
                                     <td>{{ $minuman->harga }}</td>
                                     <td>                                
-                                        <a class="edit" href="{{ url('admin/minuman/edit' ) }}">Edit </a> |
-                                        <a a class="batal" href="#"  onclick="return confirm('yakin menghapus kategori ini?');">Delete</a>
+                                        <a class="edit" href="{{ url('admin/minuman/edit/'.$minuman->id) }}">Edit </a> |
+                                        <a class="batal" href="{{ route("Admin.Minuman.Delete",["id"=>$minuman->id]) }}"  onclick="return confirm('yakin menghapus kategori ini?');">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -89,15 +89,16 @@
                             </thead>
                             <tbody>
                                 @php $i=1 @endphp
-                                
+                                @foreach($kategoris as $kategori)
                                 <tr>
                                     <td>{{ $i++ }}</td>
-                                    <td>Tea</td>
+                                    <td>{{ $kategori->nama }}</td>
                                     <td>
-                                        <a class="edit" href="#">Edit </a> |
-                                        <a a class="batal" href="#"  onclick="return confirm('yakin menghapus kategori ini?');">Delete</a>
+                                        <a class="edit" href="{{ url("admin/kategori/edit/".$kategori->id) }}">Edit </a> |
+                                        <a a class="batal" href="{{ route("Admin.Kategori.Delete",["id"=>$kategori->id]) }}"  onclick="return confirm('yakin menghapus kategori ini?');">Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

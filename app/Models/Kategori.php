@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Minuman;
 
 class Kategori extends Model
 {
@@ -13,4 +14,9 @@ class Kategori extends Model
         "nama",
         "gambar"
     ];
+
+    public function minuman()
+    {
+        return $this->hasMany(Minuman::class, 'id', 'id_kategori');
+    }
 }
