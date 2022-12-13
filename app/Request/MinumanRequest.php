@@ -19,7 +19,7 @@ class MinumanRequest extends FormRequest
             "id_kategori" => "required",
             "pilihan" => "required",
             "harga" => "required|digits_between:0,100",
-            "gambar" => "required|mimes:jpeg,jpg,png",
+            "gambar" => "image|mimes:jpeg,jpg,png",
         ];
     }
 
@@ -31,7 +31,7 @@ class MinumanRequest extends FormRequest
             "pilihan.required" => "Pilihan minuman tidak boleh kosong",
             "harga.required" => "Harga minuman tidak boleh kosong",
             "harga.digits_between" => "Harga minuman harus berupa angka",
-            "gambar.required" => "Gambar minuman tidak boleh kosong",
+            "gambar.image" => "Gambar harus berupa file image",
             "gambar.mimes" => "Gambar minuman harus berupa jpeg/jpg atau png",
         ];
     }

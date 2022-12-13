@@ -3,7 +3,6 @@
 namespace App\Repositories;
 use App\Models\{Kategori,Minuman};
 
-
 class MinumanRepository
 {
     // private 
@@ -15,12 +14,12 @@ class MinumanRepository
 
     public function getAllMinuman(): object
     {
-        return $this->model->all();
+        return $this->model->with('kategori')->get();
     }
 
-    public function getMinuman(mixed $column, mixed $data): mixed
+    public function getMinuman(string $id)
     {
-        return $this->model->where($column,$data)->firstOrFail();
+        return $this->model->with('kategori')->findOrFail($id);
     }
 
     public function whereMinuman(mixed $column, mixed $data): mixed
@@ -35,6 +34,16 @@ class MinumanRepository
             ->take($limit)
             ->latest()
             ->get();
+    }
+
+    public function updateData(string $id, array $data)
+    {
+        return $this->getMinuman($id)->update($data);
+    }
+
+    public function hapusData(string $id)
+    {
+        return $this->getMinuman($id)->delete($id);
     }
 
     public function getDiskName(): string

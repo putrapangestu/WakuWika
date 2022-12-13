@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="form-group mb-1">
                                         <label for="image">Foto Minuman</label>
-                                        <input class="form-control" id="image" type="file" name="gambar" accept="image/*">
+                                        <input class="form-control" id="image" type="file" name="gambar" accept="image/*" required>
                                         @error('gambar')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror

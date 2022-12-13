@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Kategori;
 
 class Minuman extends Model
 {
@@ -18,4 +19,9 @@ class Minuman extends Model
         "harga",
         "pilihan",
     ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class,'id_kategori','id');
+    }
 }

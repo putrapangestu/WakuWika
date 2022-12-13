@@ -30,7 +30,7 @@
     <div class="d-flex flex-column-fluid">
         <!--begin::Container-->
         <div class=" container ">
-            <form action="{{ route('Admin.Post.Kategori') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('Admin.Kategori.Edit.Post',["id"=>$kategori->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-9" style="margin: 0 auto">
@@ -52,7 +52,7 @@
                                 <div class="card-body">
                                     <div class="form-group mb-1">
                                         <label>Kategori Minuman </label>
-                                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Kategori.."/>
+                                        <input type="text" class="form-control" name="nama" id="nama" value="{{ $kategori->nama }}" placeholder="Kategori.."/>
                                     </div>
                                 </div>
                             <!--end::Form-->
