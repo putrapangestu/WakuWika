@@ -29,7 +29,7 @@
     <!--begin::Layout Themes(used by all pages)-->
     <!--end::Layout Themes-->
 
-    <link rel="shortcut icon" href="{{ assset('images/logo-wp.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('images/logo-wp.png') }}" />
 
 </head>
 <!--end::Head-->

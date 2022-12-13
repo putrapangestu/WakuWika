@@ -28,9 +28,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&amp;family=Roboto:wght@100;300;400;500;700&amp;family=Rubik:wght@300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/app.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <style>
         .header-layout1 {
             position: sticky;
