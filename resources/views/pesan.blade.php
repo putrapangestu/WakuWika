@@ -15,14 +15,15 @@
 <div class="as-cart-wrapper space-top space-extra-bottom" style="text-align: center;">
 <h2 class="h4 summary-title">Informasi Pesanan</h2>
 <div class="container">
-    <form class="woocommerce-cart-form" id="formD" name="formD" action="" method="post" enctype="multipart/form-data">
+    <form class="woocommerce-cart-form" id="formD" name="formD" action="{{ route("tambah.Pesanan",["id"=>$minuman->id]) }}" method="post" enctype="multipart/form-data">
+        @csrf
         <div style="display: flex; justify-content: center;">       
             <label for="nama"><span class="material-symbols-outlined" style="color: #D32529;">person</span></label>
-            <input type="text" class="input-atas" placeholder="Nama..">
+            <input type="text" name="nama" class="input-atas" placeholder="Nama.." required>
         </div>
         <div style="display: flex; justify-content: center;">       
             <label for="nama"><span class="material-symbols-outlined" style="color: #D32529;">table_restaurant</span></label>
-            <input type="number" class="input-atas" placeholder="Nomor Meja.."></div>
+            <input type="number" name="meja" class="input-atas" placeholder="Nomor Meja.." required></div>
         <table class="cart_table">
             <thead>
                 <tr>
@@ -34,25 +35,29 @@
             </thead>
             <tbody>
                 <tr class="cart_item">
-                    <td data-title="Product"><a class="cart-productimage" href="shop-detailis.html"><img
-                                width="91" height="91" src="assets/img/menu/menu_thumb_1_1.png" alt="Image"></a>
+                    <td data-title="Product"><a class="cart-productimage" href="javascript:;"><img
+                                width="91" height="91" src="{{ asset('storage/'.$minuman->gambar) }}" alt="Image"></a>
                     </td>
-                    <td data-title="Name">Chicken
-                            Vagetable</td>
+                    <td data-title="Name">{{ $minuman->nama }}</td>
                     <td data-title="Quantity">
                         <div class="quantity">
-                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly> 
+                            <input type="number" name="jumlah" class="qty-input" value="1" min="1" max="99" readonly> 
                         </div>
                     </td>
                     <td data-title="Hot/Ice">
-                        <span class="amount"><bdi><span class="material-symbols-outlined" style="color: #D32529;position: relative;top: 3px;">local_fire_department</span>
-                            <span class="material-symbols-outlined" style="color: #00C2FF;position: relative;top: 3px;">ac_unit</span>Hot</bdi></span></td>
+                        <span class="amount"><bdi>
+                            @if($minuman->pilihan == "hot")
+                                <span class="material-symbols-outlined" style="color: #D32529;position: relative;top: 3px;">local_fire_department</span>Hot
+                            @else
+                                <span class="material-symbols-outlined" style="color: #00C2FF;position: relative;top: 3px;">ac_unit</span>Ice
+                            @endif
+                        </bdi></span></td>
                 </tr>
             </tbody>
         </table>
         <div class="row justify-content-end">
             <div class="col-md-8 col-lg-7 col-xl-6">
-                <div class="actions"><a href="/pesan" class="as-btn" style="height: 29px;text-align: center;padding-top: 8px;text-transform: capitalize;font-weight: 700;font-size: 12px;padding-bottom: 7px;">Buat Pesanan</a></div>
+                <div class="actions"><button type="submit" class="as-btn" style="height: 29px;text-align: center;padding-top: 8px;text-transform: capitalize;font-weight: 700;font-size: 12px;padding-bottom: 7px;">Buat Pesanan</button></div>
             </div>
         </div>
     </form>

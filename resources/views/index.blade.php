@@ -46,7 +46,7 @@
                         <h3 class="product-title" style="margin-bottom: 0;"><a href="shop-details.html" style="font-size: 16px;color: black;font-weight: 700;">{{ $minuman->nama }}</a></h3>
                         <p class="product-text">Lightly smoked and minced pork tenderloin topped with our chilli hot
                             sauce.</p><span class="price" style="font-size: 12px;color: #4e4e4e;">Hot</span>
-                        <span class="price" style="font-size: 12px;font-weight: 700;">Rp {{ $minuman->harga }}</span><div class="actions"><a href="/pesan" class="as-btn" style="height: 29px;text-align: center;padding-top: 8px;text-transform: capitalize;font-weight: 700;font-size: 12px;padding-bottom: 7px;">Order</a></div>
+                        <span class="price" style="font-size: 12px;font-weight: 700;">Rp {{ $minuman->harga }}</span><div class="actions"><a href="{{ url("pesan/".$minuman->id) }}" class="as-btn" style="height: 29px;text-align: center;padding-top: 8px;text-transform: capitalize;font-weight: 700;font-size: 12px;padding-bottom: 7px;">Order</a></div>
                     </div>
                 </div>
             </div>

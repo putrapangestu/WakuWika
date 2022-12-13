@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{KategoriController,MinumanController};
 use App\Http\Controllers\{LoginController};
+use App\Http\Controllers\Pesan\PesanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +19,9 @@ use App\Http\Controllers\{LoginController};
 Route::get('/login', [LoginController::class, "halaman"]);
 Route::post('/post-login', [LoginController::class, "postLogin"])->name("Admin.login");
 
-Route::get('/pesan', function () {
-    return view('pesan');
-});
+//pesanan user
+Route::get('/pesan/{id}', [PesanController::class, "halaman"]);
+Route::post('/post-pesanan/{id}', [PesanController::class, "tambah"])->name("tambah.Pesanan");
 
 //image
 Route::get('image/{filename}', 'HomeController@displayImage')->name('image.displayImage');
@@ -33,9 +34,10 @@ Route::post('/post-kategori', [KategoriController::class, "tambah"])->name("Admi
 Route::get('/tambah', [MinumanController::class, "halaman"])->name("Admin.Minuman");
 Route::get('/', [MinumanController::class, "item"])->name("Minuman");
 Route::post('/post-minuman', [MinumanController::class, "tambah"])->name("Admin.Post.Minuman");
-Route::get('/pesanan', function () {
-    return view('admin.pesanan.index');
-});
+
+//admin pesanan
+Route::get('/pesanan', [PesanController::class, "halamanAdmin"]);
+Route::post('/pesanan/{id}', [PesanController::class, "edit"])->name("update.Pesanan");
 
 //edit
 Route::get('admin/minuman/edit/{id}', [MinumanController::class, "halaman2"])->name("Admin.Minuman.Edit");

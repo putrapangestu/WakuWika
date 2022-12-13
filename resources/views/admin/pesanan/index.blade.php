@@ -46,15 +46,23 @@
                 </thead>
                 <tbody>
                     @php $i=1 @endphp
-                    
-                    <tr>
-                        <td>{{ $i++ }}</td>
-                        <td>Star Creator</td>
-                        <td>Meja 42</td>
-                        <td>Kopi robusta | <span style="color: red"> hot</span></td>
-                        <td>Rp. 0</td>
-                        <td><button>Sudah</button></td>
-                    </tr>
+                    @foreach($pesanans as $pesanan)
+                        @if($pesanan->status == null)
+                            <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>{{ $pesanan->nama }}</td>
+                                <td>Meja {{ $pesanan->meja }}</td>
+                                <td>{{ $pesanan->minuman->nama }} | <span style="color: red"> {{ $pesanan->minuman->pilihan }}</span></td>
+                                <td>Rp. {{ $pesanan->minuman->harga }}</td>
+                                <td>
+                                <form action="{{ route("update.Pesanan",["id" => $pesanan->id]) }}" method="POST">
+                                    @csrf
+                                    <button>Sudah</button>
+                                </form>
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -101,15 +109,18 @@
                 </thead>
                 <tbody>
                     @php $i=1 @endphp
-                    
-                    <tr>
-                        <td>{{ $i++ }}</td>
-                        <td>Star Creator</td>
-                        <td>Meja 42</td>
-                        <td>Kopi robusta | <span style="color: red"> hot</span></td>
-                        <td>Rp. 0</td>
-                        <td style="color: rgb(52, 216, 52)" >Selesai</td>
-                    </tr>
+                    @foreach($pesanans as $pesanan)
+                        @if($pesanan->status != null)
+                            <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>{{ $pesanan->nama }}</td>
+                                <td>Meja {{ $pesanan->meja }}</td>
+                                <td>{{ $pesanan->minuman->nama }} | <span style="color: red"> {{ $pesanan->minuman->pilihan }}</span></td>
+                                <td>Rp. {{ $pesanan->minuman->harga }}</td>
+                                <td style="color: rgb(52, 216, 52)" >Selesai</td>
+                            </tr>
+                        @endif
+                    @endforeach
                 </tbody>
             </table>
         </div>
